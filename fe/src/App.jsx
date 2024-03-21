@@ -10,6 +10,10 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        for (let i = data.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [data[i], data[j]] = [data[j], data[i]];
+        }
         setJobs(data);
       })
       .catch((error) => {
