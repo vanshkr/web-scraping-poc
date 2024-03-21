@@ -3,6 +3,7 @@ import Job from "./models/jobs.js";
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 
 let start = 0;
 const num = 10;
@@ -10,9 +11,8 @@ let baseURL = `https://aexp.eightfold.ai/api/apply/v2/jobs?domain=aexp.com&start
 
 const app = express();
 dotenv.config();
-
+app.use(cors());
 const PORT = process.env.PORT || 7000;
-const CONNECTION_URL = process.env.CONNECTION_URL;
 app.get("/status", (req, res) => {
   res.send("Server is up and running!");
 });

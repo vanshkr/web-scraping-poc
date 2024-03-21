@@ -4,6 +4,7 @@ const jobSchema = new mongoose.Schema({
   id: { type: String },
   job_id: { type: String },
   job_title: { type: String },
+  job_location: { type: String },
   company_name: { type: String },
   job_requirements: [String],
   job_apply_link: String,
